@@ -544,7 +544,8 @@ sat_job_remove <-
 #' sat_job_edit_source(job_name)
 #' }
 sat_job_edit_source <- function(job_name) {
-  rstudioapi::navigateToFile(file.path(job_name, sprintf("%s.r", job_name)))
+  src <- file.path(job_name, sprintf("%s.r", job_name))
+  rstudioapi::navigateToFile(src)
 }
 
 #' Saturn Job Edit Cron
@@ -565,7 +566,8 @@ sat_job_edit_source <- function(job_name) {
 #' >/dev/null 2>&1 to the syntax as in the following example: 0 5 * * *
 #' /root/backup.sh >/dev/null 2>&1
 sat_job_edit_cron <- function(job_name) {
-  rstudioapi::navigateToFile(file.path(job_name, sprintf("%s.cron", job_name)))
+  crn <- file.path(job_name, sprintf("%s.cron", job_name))
+  rstudioapi::navigateToFile(crn)
 }
 
 #' Saturn qstat Command
