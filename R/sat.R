@@ -1,3 +1,4 @@
+# globals in this file
 globalVariables(".sjob")
 
 #' Saturn Connect
