@@ -29,6 +29,11 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
+      - name: Install system requirements
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get install -y libssh-dev
+
       - uses: actions/checkout@v3
 
       - uses: r-lib/actions/setup-pandoc@v2
